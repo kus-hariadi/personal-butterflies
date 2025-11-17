@@ -7,6 +7,20 @@
     <title>Document</title>
   </head>
   <body>
+    <!-- AUDIO PLAYER -->
+  <audio id="music" src="lagu.mp3" loop></audio>
+
+  <script>
+    // auto play setelah user klik pertama kali
+    const startMusic = () => {
+      const audio = document.getElementById("music");
+      audio.play().catch(() => {});
+    };
+
+    window.addEventListener("click", startMusic, { once: true });
+    window.addEventListener("touchstart", startMusic, { once: true });
+  </script>
+  
     <div id="app">
       <div id="hero">
         <h1><span>🦋</span><br />Butterflies for zahra</h1>
@@ -18,5 +32,3 @@
     <script type="module" src="butterflies.js"></script>
   </body>
 </html>
-
-
